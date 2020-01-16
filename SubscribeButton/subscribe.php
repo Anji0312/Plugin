@@ -15,4 +15,16 @@ if(!defined('ABSPATH')){
 
 }
 
+//Class
 require_once(plugin_dir_path(__FILE__).'/includes/Subs_Scripts.php');
+
+
+//Script
+require_once(plugin_dir_path(__FILE__).'/includes/Subs_Class.php');
+
+//Register
+function register_subs(){
+    register_widget('Subscribe_Button_Widget');
+}
+
+add_action('widgets_init','register_subs');

@@ -9,9 +9,9 @@
      */
     function __construct() {
       parent::__construct(
-        'youtubesubs_widget', // Base ID
-        esc_html__( 'YouTube Subs', 'yts_domain' ), // Name
-        array( 'description' => esc_html__( 'Widget to display YouTube subs', 'yts_domain' ), ) // Args
+        'subscribe_widget', // Base ID
+        esc_html__( 'Subscribe Button', 'wps_domain' ), // Name
+        array( 'description' => esc_html__( 'Widget to display Subscribe Button', 'wps_domain' ), ) // Args
       );
     }
   
