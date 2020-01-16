@@ -10,3 +10,7 @@ Author URI: https://anjaliv.sgedu.site/wordpress03/
 */
 
 // Exit if accessed directly
+if(!defined('ABSPATH')){
+    exit;
+
+}
