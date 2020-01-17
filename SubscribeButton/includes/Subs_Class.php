@@ -14,7 +14,7 @@
         array( 'description' => esc_html__( 'Widget to display Subscribe Button', 'wps_domain' ), ) // Args
       );
     }
-  
+  // 
     /**
      * Front-end display of widget.
      *
@@ -31,7 +31,7 @@
       }
 
       // Widget Content Output
-      echo '<div class="g-ytsubscribe" data-channel="'.$instance['channel'].'" data-layout="'.$instance['layout'].'" data-count="'.$instance['count'].'"></div>';
+      echo '<div class="g-ytsubscribe" data-channel="BrisbaneBarConsultant" data-layout="full" data-count="default"></div>';
 
       echo $args['after_widget']; // Whatever you want to display after widget (</div>, etc)
     }
@@ -44,13 +44,13 @@
      * @param array $instance Previously saved values from database.
      */
     public function form( $instance ) {
-      $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'YouTube Subs', 'yts_domain' ); 
+      $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Subscribe Button', 'wps_domain' ); 
       
-      $channel = ! empty( $instance['channel'] ) ? $instance['channel'] : esc_html__( 'techguyweb', 'yts_domain' ); 
+      $channel = ! empty( $instance['channel'] ) ? $instance['channel'] : esc_html__( 'techguyweb', 'wps_domain' ); 
 
-      $layout = ! empty( $instance['layout'] ) ? $instance['layout'] : esc_html__( 'default', 'yts_domain' ); 
+      $layout = ! empty( $instance['layout'] ) ? $instance['layout'] : esc_html__( 'default', 'wps_domain' ); 
 
-      $count = ! empty( $instance['count'] ) ? $instance['count'] : esc_html__( 'default', 'yts_domain' ); 
+      $count = ! empty( $instance['count'] ) ? $instance['count'] : esc_html__( 'default', 'wps_domain' ); 
   
       ?>
       
@@ -59,7 +59,7 @@
       <!-- TITLE -->
       <p>
         <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
-          <?php esc_attr_e( 'Title:', 'yts_domain' ); ?>
+          <?php esc_attr_e( 'Title:', 'wps_domain' ); ?>
         </label> 
 
         <input 
@@ -73,7 +73,7 @@
       <!-- CHANNEL -->
       <p>
         <label for="<?php echo esc_attr( $this->get_field_id( 'channel' ) ); ?>">
-          <?php esc_attr_e( 'Channel:', 'yts_domain' ); ?>
+          <?php esc_attr_e( 'Channel:', 'wps_domain' ); ?>
         </label> 
 
         <input 
@@ -87,7 +87,7 @@
       <!-- LAYOUT -->
       <p>
         <label for="<?php echo esc_attr( $this->get_field_id( 'layout' ) ); ?>">
-          <?php esc_attr_e( 'Layout:', 'yts_domain' ); ?>
+          <?php esc_attr_e( 'Layout:', 'wps_domain' ); ?>
         </label> 
 
         <select 
@@ -106,7 +106,7 @@
       <!-- COUNT -->
       <p>
         <label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>">
-          <?php esc_attr_e( 'Count:', 'yts_domain' ); ?>
+          <?php esc_attr_e( 'Count:', 'wps_domain' ); ?>
         </label> 
 
         <select 
@@ -148,4 +148,4 @@
       return $instance;
     }
   
-  } // class Foo_Widget
+  } // class 
