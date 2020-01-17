@@ -27,4 +27,6 @@ function register_subs(){
     register_widget('Subscribe_Button_Widget');
 }
 
+
+//Hook in Function
 add_action('widgets_init','register_subs');
