@@ -117,7 +117,9 @@
           <option value="default" <?php echo ($count == 'default') ? 'selected' : ''; ?>>
             Default
           </option>
-          
+          <option value="hidden" <?php echo ($count == 'hidden') ? 'selected' : ''; ?>>
+            Hidden
+          </option>
         </select>
       </p>
       <?php 
