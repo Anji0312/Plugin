@@ -31,8 +31,12 @@
       }
 
       // Widget Content Output
-      echo '<div class="g-ytsubscribe"data-channel="'.$instance['channel'].'" data-layout="'.$instance['layout'].'" 
-      data-count="'.$instance['subcount'].'" ></div>'; 
+     // <div class="g-ytsubscribe" data-channelid="UCV-GtPzpGpLP48_Ws2t-usA" data-layout="full" data-count="default"></div>
+    
+
+      echo '<div class="g-ytsubscribe" data-channel="'.$instance['channel'].'" data-layout="'.$instance['layout'].'" 
+      data-count="'.$instance['subcount'].'"></div>';
+
 
       echo $args['after_widget']; // Whatever you want to display after widget (</div>, etc)
     }
@@ -111,7 +115,7 @@
         </label> 
 
         <select 
-          class="widefat" 
+          class="widefat" t
           id="<?php echo esc_attr( $this->get_field_id( 'subcount' ) ); ?>" 
           name="<?php echo esc_attr( $this->get_field_name( 'subcount' ) ); ?>">
           <option value="default" <?php echo ($subcount == 'default') ? 'selected' : ''; ?>>
