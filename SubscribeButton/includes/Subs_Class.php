@@ -31,7 +31,7 @@
       }
 
       // Widget Content Output
-      echo '<div class="g-ytsubscribe"data-channel="'.$instance['channel'].'" data-layout="full" 
+      echo '<div class="g-ytsubscribe"data-channel="'.$instance['channel'].'" data-layout="'.$instance['layout']'" 
       data-count="default"></div>'; 
 
       echo $args['after_widget']; // Whatever you want to display after widget (</div>, etc)
