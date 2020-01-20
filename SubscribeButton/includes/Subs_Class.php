@@ -31,8 +31,8 @@
       }
 
       // Widget Content Output
-      echo '<div class="g-ytsubscribe"data-channel="'.$instance['channel'].'" data-layout="'.$instance['layout']'" 
-      data-count="default"></div>'; 
+      echo '<div class="g-ytsubscribe"data-channel="'.$instance['channel'].'" data-layout="'.$instance['layout'].'" 
+      data-count="'.$instance['subcount'].'" ></div>'; 
 
       echo $args['after_widget']; // Whatever you want to display after widget (</div>, etc)
     }
@@ -43,7 +43,7 @@
      * @see WP_Widget::form()
      *
      * @param array $instance Previously saved values from database.
-     */
+     */ 
     public function form( $instance ) {
       $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Subscribe Button', 'wps_domain' ); 
       
@@ -51,7 +51,7 @@
 
       $layout = ! empty( $instance['layout'] ) ? $instance['layout'] : esc_html__( 'default', 'wps_domain' ); 
 
-      $count = ! empty( $instance['count'] ) ? $instance['count'] : esc_html__( 'default', 'wps_domain' ); 
+      $subcount = ! empty( $instance['subcount'] ) ? $instance['subcount'] : esc_html__( 'default', 'wps_domain' ); 
   
       ?>
       
@@ -104,21 +104,21 @@
         </select>
       </p>
 
-      <!-- COUNT -->
+      <!-- SUBCOUNT -->
       <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>">
-          <?php esc_attr_e( 'Count:', 'wps_domain' ); ?>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'subcount' ) ); ?>">
+          <?php esc_attr_e( 'SubCount:', 'wps_domain' ); ?>
         </label> 
 
         <select 
           class="widefat" 
-          id="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>" 
-          name="<?php echo esc_attr( $this->get_field_name( 'count' ) ); ?>">
-          <option value="default" <?php echo ($count == 'default') ? 'selected' : ''; ?>>
+          id="<?php echo esc_attr( $this->get_field_id( 'subcount' ) ); ?>" 
+          name="<?php echo esc_attr( $this->get_field_name( 'subcount' ) ); ?>">
+          <option value="default" <?php echo ($subcount == 'default') ? 'selected' : ''; ?>>
             Default
           </option>
-          <option value="full" <?php echo ($count == 'Full') ? 'selected' : ''; ?>>
-            Full
+          <option value="hidden" <?php echo ($subcount == 'hidden') ? 'selected' : ''; ?>>
+            Hidden
           </option>
         </select>
       </p>
@@ -144,7 +144,7 @@
 
       $instance['layout'] = ( ! empty( $new_instance['layout'] ) ) ? strip_tags( $new_instance['layout'] ) : '';
 
-      $instance['count'] = ( ! empty( $new_instance['count'] ) ) ? strip_tags( $new_instance['count'] ) : '';
+      $instance['subcount'] = ( ! empty( $new_instance['subcount'] ) ) ? strip_tags( $new_instance['subcount'] ) : '';
   
       return $instance;
     }
