@@ -34,8 +34,7 @@
      // <div class="g-ytsubscribe" data-channelid="UCV-GtPzpGpLP48_Ws2t-usA" data-layout="full" data-count="default"></div>
     
 
-      echo '<div class="g-ytsubscribe" data-channel="'.$instance['channel'].'" data-layout="'.$instance['layout'].'" 
-      data-count="'.$instance['subcount'].'"></div>';
+      echo '<div class="g-ytsubscribe" data-channelid="UCV-GtPzpGpLP48_Ws2t-usA" data-layout="full" data-count="default"></div>';
 
 
       echo $args['after_widget']; // Whatever you want to display after widget (</div>, etc)
@@ -51,7 +50,7 @@
     public function form( $instance ) {
       $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Subscribe Button', 'wps_domain' ); 
       
-      $channel = ! empty( $instance['channel'] ) ? $instance['channel'] : esc_html__( 'BrisbaneBarConsultant', 'wps_domain' ); 
+      $channel = ! empty( $instance['channel'] ) ? $instance['channel'] : esc_html__( 'BrisbaneBar', 'wps_domain' ); 
 
       $layout = ! empty( $instance['layout'] ) ? $instance['layout'] : esc_html__( 'default', 'wps_domain' ); 
 
