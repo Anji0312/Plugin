@@ -1,20 +1,20 @@
 <?php
 /**
- * Adds Subscribe_Button widget.
+ * Adds Youtube_Subs widget.
  */
- class Subscribe_Button_Widget extends WP_Widget {
+ class Youtube_Subs_Widget extends WP_Widget {
   
     /**
      * Register widget with WordPress.
      */
     function __construct() {
       parent::__construct(
-        'subscribe_widget', // Base ID
+        'subscribebutton_widget', // Base ID
         esc_html__( 'Subscribe Button', 'wps_domain' ), // Name
         array( 'description' => esc_html__( 'Widget to display Subscribe Button', 'wps_domain' ), ) // Args
       );
     }
-  // 
+  
     /**
      * Front-end display of widget.
      *
@@ -31,11 +31,7 @@
       }
 
       // Widget Content Output
-     // <div class="g-ytsubscribe" data-channelid="UCV-GtPzpGpLP48_Ws2t-usA" data-layout="full" data-count="default"></div>
-    
-
-      echo '<div class="g-ytsubscribe" data-channelid="UCV-GtPzpGpLP48_Ws2t-usA" data-layout="full" data-count="default"></div>';
-
+      echo '<div class="g-ytsubscribe" data-channel="'.$instance['channel'].'" data-layout="'.$instance['layout'].'" data-count="'.$instance['count'].'"></div>';
 
       echo $args['after_widget']; // Whatever you want to display after widget (</div>, etc)
     }
@@ -46,15 +42,15 @@
      * @see WP_Widget::form()
      *
      * @param array $instance Previously saved values from database.
-     */ 
+     */
     public function form( $instance ) {
       $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Subscribe Button', 'wps_domain' ); 
       
-      $channel = ! empty( $instance['channel'] ) ? $instance['channel'] : esc_html__( 'BrisbaneBar', 'wps_domain' ); 
+      $channel = ! empty( $instance['channel'] ) ? $instance['channel'] : esc_html__( 'Brisbane', 'wps_domain' ); 
 
       $layout = ! empty( $instance['layout'] ) ? $instance['layout'] : esc_html__( 'default', 'wps_domain' ); 
 
-      $subcount = ! empty( $instance['subcount'] ) ? $instance['subcount'] : esc_html__( 'default', 'wps_domain' ); 
+      $count = ! empty( $instance['count'] ) ? $instance['count'] : esc_html__( 'default', 'wps_domain' ); 
   
       ?>
       
@@ -107,20 +103,20 @@
         </select>
       </p>
 
-      <!-- SUBCOUNT -->
+      <!-- COUNT -->
       <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'subcount' ) ); ?>">
-          <?php esc_attr_e( 'SubCount:', 'wps_domain' ); ?>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>">
+          <?php esc_attr_e( 'Count:', 'wps_domain' ); ?>
         </label> 
 
         <select 
-          class="widefat" t
-          id="<?php echo esc_attr( $this->get_field_id( 'subcount' ) ); ?>" 
-          name="<?php echo esc_attr( $this->get_field_name( 'subcount' ) ); ?>">
-          <option value="default" <?php echo ($subcount == 'default') ? 'selected' : ''; ?>>
+          class="widefat" 
+          id="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>" 
+          name="<?php echo esc_attr( $this->get_field_name( 'count' ) ); ?>">
+          <option value="default" <?php echo ($count == 'default') ? 'selected' : ''; ?>>
             Default
           </option>
-          <option value="hidden" <?php echo ($subcount == 'hidden') ? 'selected' : ''; ?>>
+          <option value="hidden" <?php echo ($count == 'hidden') ? 'selected' : ''; ?>>
             Hidden
           </option>
         </select>
@@ -147,9 +143,9 @@
 
       $instance['layout'] = ( ! empty( $new_instance['layout'] ) ) ? strip_tags( $new_instance['layout'] ) : '';
 
-      $instance['subcount'] = ( ! empty( $new_instance['subcount'] ) ) ? strip_tags( $new_instance['subcount'] ) : '';
+      $instance['count'] = ( ! empty( $new_instance['count'] ) ) ? strip_tags( $new_instance['count'] ) : '';
   
       return $instance;
     }
   
-  } // class 
+  } // class Foo_Widget
