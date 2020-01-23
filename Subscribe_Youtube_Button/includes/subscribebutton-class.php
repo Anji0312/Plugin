@@ -51,6 +51,8 @@
       $layout = ! empty( $instance['layout'] ) ? $instance['layout'] : esc_html__( 'default', 'wps_domain' ); 
 
       $count = ! empty( $instance['count'] ) ? $instance['count'] : esc_html__( 'default', 'wps_domain' ); 
+
+      
   
       ?>
       
