@@ -17,6 +17,6 @@ No need to copy and paste code throughout your WordPress site.
 * Let the admin select channel name of Youtube.
 * Pre-select an Title to be displayed on Button.
 * Default to the Layout which can be changed by the admin.
-* Pick from the wiget whether you want to show the count of Number of subscriber on your website or no.
+* Pick from the widget whether you want to show the count of number of subscriber on your youtube channel.
 * Hide the subscribe count on specific websites.
 * Add a Youtube "Subscribe" Button to your sidebar or footer as a widget.
