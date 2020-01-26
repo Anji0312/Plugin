@@ -1,10 +1,10 @@
 # Project: Plugin
 Made Plugin 
-# Project Name: YouTube Subs Wordpress Widget
+### == Project Name: YouTube Subs Wordpress Widget === ###
 
 This plugin is simple Widget to display a subscribe button and the option to show/hide the sub count and change layout.
 
-# == Subscribe YouTube Wordpress Widget ===
+### == Subscribe YouTube Wordpress Widget === ###
 Contributors: Anjali Pawan Verma
 Tags: widget, youtube, youtube subscribe, youtube subscribe button, subscribe button, youtube subs, subscribe, subs, subscriber, youtube subscriber, youtube sub
 Requires at least: 4.6
@@ -13,7 +13,7 @@ Stable tag: 1.0.6
 Requires PHP: 5.6.0
 License: GPLv2 or later
 
-# == Description ==
+### == Description === ###
 
 Add a simple Youtube "Subscribe" Button to your website in 2 minutes!
 
@@ -30,11 +30,11 @@ No need to copy and paste code throughout your WordPress site.
 * Subscribe to the youtube channel by one click on button. 
 
 
-# == Features ==
+### == Features == ###
 *Enable or Disable Full Layout.
 *Show or hide subscriber count.
 
-# == Installation ==
+### == Installation == ###
 
 Upload the Youtube Subscribe Widget to your blog, Activate it.
 
@@ -42,7 +42,7 @@ Add button to the widgets where you want to upload your youtube button.
 
  You're done!
 
-# == ChangeLog ==
+### == ChangeLog ==  ###
 
 =1.0.4 =
 * Add 'Title' customizable
